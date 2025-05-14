@@ -1,7 +1,8 @@
 const apiID = '50fe9d77'
 const apiKey = '3bfc40a872e03c77029e146fcb6250f0'
 const recipeName = 'sandwic'
-const apiUrl = `https://api.edamam.com/search?q=${recipeName}&app_id=${apiID}&app_key=${apiKey}&page=10`
+const apiUrl = `https://api.edamam.com/api/recipes/v2?type=public&q=${recipeName}&app_id=${apiID}&app_key=${apiKey}&page=15`
+
 
 // Defind DOM
 const main = document.querySelector('.main-container')
@@ -108,11 +109,11 @@ function updateDoM(filterredSandWiches) {
         const reviewSection = document.createElement('i')
         reviewSection.classList.add('fa', 'fa-smile-o');
 
-          (function (index, parentCard) {
-            reviewSection.addEventListener('click', function () {
-              handleRatingClick(index + 1, parentCard)
-            })
-          })(i, sandwichCardHolder)
+        (function (index, parentCard) {
+          reviewSection.addEventListener('click', function () {
+            handleRatingClick(index + 1, parentCard)
+          })
+        })(i, sandwichCardHolder)
 
         reviewContainer.appendChild(reviewSection)
       }
